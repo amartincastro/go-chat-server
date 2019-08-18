@@ -9,7 +9,8 @@ import (
 	"log"
 	"net/http"
 	"time"
-	"ioutil"
+	"io/ioutil"
+
 	"github.com/gorilla/websocket"
 )
 
@@ -81,10 +82,10 @@ func main() {
         	}
 	}
 
-	func (m Message) saveToFile(filename string) error { // Save messages to local log file
+	func (m Message) saveToFile(filename string) error {
 		return ioutil.WriteFile(filename, []byte(m.toString()), 0666)
 	}
 
-	Message.saveToFile("chat_logs")
+	Message.saveToFile("chat_logs") // Save messages to local log file
 
 }
