@@ -12,7 +12,7 @@ new Vue({ // Mount vue object to a div with the id of #app
 
     created: function() { // Vue function initializes when the app launches
         var self = this;
-        this.ws = new WebSocket('ws://' + window.location.host + '/ws');
+        this.ws = new WebSocket('wss://' + window.location.host + '/ws');
         this.ws.addEventListener('message', function(e) { // Takes a function to handle incoming messages as JSON string and parse them as object literals
             var msg = JSON.parse(e.data);
             self.chatContent += '<div class="chip">'
