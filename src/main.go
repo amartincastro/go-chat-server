@@ -12,11 +12,7 @@ var clients = make(map[*websocket.Conn]bool)		// Connected clients. The first va
 
 var broadcast = make(chan Message)         			 // Croadcast channel. This variable is a channel that will act as a queue for messages sent by clients. 
 
-var upgrader = websocket.Upgrader{
-	CheckOrigin: func(r *http.Request) bool {
-		return true
-	},
-}				 // Configure the upgrader - an object with methods for taking a normal HTTP connection and upgrading it to a WebSocket as we'll see later in the code.
+var upgrader = websocket.Upgrader{}				 // Configure the upgrader - an object with methods for taking a normal HTTP connection and upgrading it to a WebSocket as we'll see later in the code.
 
 type Message struct {
 	Email    string `json:"email"`					 // Define our message object
