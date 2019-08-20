@@ -1,6 +1,9 @@
 # go-chat-server
 :phone: Chat server written in Go, JS, and Vue
 
+Based on:
+- https://scotch.io/bar-talk/build-a-realtime-chat-server-with-go-and-websockets
+
 Compatibility:
 - The application was tested and works on Mozilla Firefox v68.0.2
 - Certain features may not be available on other browsers or versions
